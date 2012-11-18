@@ -1,1 +1,1 @@
-module.exports = require('./lib/mutant')
+module.exports = require('./mutant')
