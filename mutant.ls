@@ -1,4 +1,5 @@
 if window?
+  true
 else
   jsdom = require 'jsdom'
   jade = require 'jade'
@@ -8,8 +9,8 @@ else
 
     jsdom_opts = {html, scripts}
 
-    jsdom_done = (err, window) =>
-      if err then cb(err) ; return
+    jsdom_done = (err, window) ~>
+      if err then return cb(err)
 
       window.$ = window.jQuery
       cb(null, window)
@@ -17,7 +18,7 @@ else
     jsdom.env jsdom_opts, jsdom_done
 
 @run = (template, opts, cb = (->)) ->
-  ###
+  /*
   run returns void because it mutates the window object
 
   on the server side we need to know the base html before we can mutate it
@@ -35,7 +36,7 @@ else
   onInitial only happens on an initial pageload (not on mutation)
 
   onMutate only happens on a mutation (not on an initial pageload)
-  ###
+  */
 
   # initial pagelaod, only run dynamic
   initial_run = opts.initial
