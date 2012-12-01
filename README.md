@@ -17,14 +17,18 @@ USAGE
 DEV
 ===
 
-    coffee --watch --compile *.coffee &
-    lsc    --watch --compile *.ls     &
+    npm install
+    lsc --watch --compile *.ls &
 
 TODO
+====
+
+- write example app
+- write documentation
+
+DONE
 ====
 
 - extract more code from weedmaps-node project
 - port coffeescript code to livescript
 - write package.json for lib 
-- write example app
-- write documentation
