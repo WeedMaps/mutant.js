@@ -29,6 +29,4 @@ app.configure 'development', ->
 # Routes
 require("#{__dirname}/routes")(app)
 
-# Server
-http.createServer(app).listen app.get('port'), ->
-  console.log "Express server listening on port #{app.get 'port'} in #{app.settings.env} mode"
+exports.app = app

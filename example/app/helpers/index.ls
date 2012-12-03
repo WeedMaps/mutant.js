@@ -12,6 +12,8 @@ exports.autoload = autoload = (dir, app) ->
     else
       require(path)?(app)
 
+/* LiveScript doesn't seem to allow the modification of these prototypes.
+
 # Return last item of an array
 # ['a', 'b', 'c'].last() => 'c'
 Array::last = ->
@@ -31,3 +33,5 @@ String::classify = (str) ->
     classified.push word.capitalize()
 
   classified.join('')
+
+*/
